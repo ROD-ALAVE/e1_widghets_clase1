@@ -42,6 +42,15 @@ class _LoginScreenState extends State<LoginScreen> {
                   // Aquí irá la lógica de login después
                   String email = _emailController.text;
                   String password = _passwordController.text;
+
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Bienvenido, ${_emailController.text}'),
+                      backgroundColor: Colors.green,
+                      duration: Duration(seconds: 2),
+                    ),
+                  );
+
                   print('Email: $email, Password: $password');
                 },
                 child: Text('Iniciar sesión'),
