@@ -15,32 +15,41 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          TextField(
-            controller: _emailController,
-            decoration: InputDecoration(
-              labelText: 'Correo electrónico',
-            ),
+      body: Center(
+        child:Padding(padding: const EdgeInsets.all(24.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text('Login del Ejemplo 1'),
+              const SizedBox(height: 32),
+              TextField(
+                controller: _emailController,
+                decoration: InputDecoration(
+                  labelText: 'Usuario',
+                ),
+              ),
+              const SizedBox(height: 16),
+              TextField(
+                controller: _passwordController,
+                decoration: InputDecoration(
+                  labelText: 'Contraseña',
+                ),
+                obscureText: true,
+              ),
+              const SizedBox(height: 24),
+              ElevatedButton(
+                onPressed: () {
+                  // Aquí irá la lógica de login después
+                  String email = _emailController.text;
+                  String password = _passwordController.text;
+                  print('Email: $email, Password: $password');
+                },
+                child: Text('Iniciar sesión'),
+              ),
+            ],
           ),
-          TextField(
-            controller: _passwordController,
-            decoration: InputDecoration(
-              labelText: 'Contraseña',
-            ),
-            obscureText: true,
-          ),
-          ElevatedButton(
-            onPressed: () {
-              // Aquí irá la lógica de login después
-              String email = _emailController.text;
-              String password = _passwordController.text;
-              print('Email: $email, Password: $password');
-            },
-            child: Text('Iniciar sesión'),
-          ),
-        ],
-      ),
+        )
+      )
     );
   }
 }
