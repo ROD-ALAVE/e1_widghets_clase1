@@ -17,7 +17,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return GestureDetector(
       onTap: () => _mostrarNotificacion(context, "Presión simple", Colors.blue),
       onLongPress: () => _mostrarNotificacion(context, "Mantenido presionado", Colors.green),
-      onDoubleTap: () => _mostrarNotificacion(context, "Doble clic", Colors.orange),
+      onDoubleTap: () => _mostrarNotificacion(context, "Doble clic", Colors.deepPurple),
       onPanUpdate: (details) {
         if (details.delta.dx > 20) {
           _mostrarNotificacion(context, "Deslizó hacia la derecha", Colors.amber);
